@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from prompts import SYSTEM_PROMPT, get_analysis_prompt
 
 load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY") or st.secrets.get("OPENAI_API_KEY")
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 st.set_page_config(page_title="Adnan's Resume Analyzer", page_icon="📄")
